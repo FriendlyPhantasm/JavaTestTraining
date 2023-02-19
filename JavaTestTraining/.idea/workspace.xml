@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82bef508-4c98-4237-a7a3-c2b4ca1c0ff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sandbox/src/main/java/MyFirstProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sandbox/src/main/java/ru/manapov/stqa/pft/sandbox/MyFirstProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sandbox/src/main/java/ru/manapov/stqa/pft/sandbox/MyFirstProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sandbox/src/main/java/ru/manapov/stqa/pft/sandbox/MyFirstProgram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +57,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/alexm/OneDrive/Документы/Education/JavaTestTraining/sandbox/src/main/java",
     "last_opened_file_path": "C:/Users/alexm/OneDrive/Документы/Education/JavaTestTraining/sandbox/build.gradle",
     "project.structure.last.edited": "Modules",
