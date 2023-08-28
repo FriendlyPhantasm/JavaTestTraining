@@ -10,7 +10,7 @@ public class ContactModificationTests extends TestBase {
         app.getNavigationHelper().gotoHomePage();
         if (! app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("Ivan", "Sergeevich", "Modifikenko", "Dishisv",
-                    "Best Company", "World", "New York", "+79007773333", "testgroup"), true);
+                    "Best Company", "World", "New York", "+79007773333"));
         }
         app.getNavigationHelper().gotoHomePage();
         app.getContactHelper().selectContact();

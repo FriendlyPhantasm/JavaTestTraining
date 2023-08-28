@@ -25,14 +25,15 @@ public class ContactHelper extends HelperBase {
       type(By.name("address"),contactData.address());
       type(By.name("mobile"),contactData.mobile());
 
-      if (creation) {
-          new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-      } else {
-          Assert.assertFalse(isElementPresent(By.name("new_group")));
-      }
-      if (isElementPresent(By.name("new_group"))) {
-        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-      }
+      if (creation)
+        {
+            Select groupSelection = new Select(wd.findElement(By.name("new_group")));
+            if (groupSelection.isMultiple())
+                new Select(wd.findElement(By.name("new_group"))).selectByIndex(1);
+        } else {
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        }
+
     }
 
     public void initAddContact() {
@@ -52,9 +53,9 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form/input[22]"));
     }
 
-    public void createContact(ContactData contact, boolean creation) {
+    public void createContact(ContactData contact) {
         initAddContact();
-        fillContactForm(contact, creation);
+        fillContactForm(contact, true);
         submitAddContact();
     }
 
