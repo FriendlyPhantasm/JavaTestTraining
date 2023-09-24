@@ -45,9 +45,6 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectContact(int id) {
-        //click(By.id("3"));
-        //table[@id='maintable']/tbody/tr[15]/td[8]/a/img
-        //click(By.xpath("//img[@alt='Edit']"));
         click(By.xpath("//table[@id='maintable']/tbody/tr[" +  String.valueOf(id) + "]/td[8]/a/img"));
     }
 
@@ -59,17 +56,28 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form/input[22]"));
     }
 
-    public void createContact(ContactData contact) {
+    public void create(ContactData contact) {
         initAddContact();
         fillContactForm(contact, true);
         submitAddContact();
+    }
+
+    public void modify(int index, ContactData contact) {
+        selectContact(index);
+        fillContactForm(contact, false);
+        updateContact();
+    }
+
+    public void delete(int index) {
+        selectContact(index);
+        deleteContact();
     }
 
     public boolean isThereAContact() {
         return isElementPresent(By.xpath("//img[@alt='Edit']"));
     };
 
-    public List<ContactData> getContactList() {
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.xpath("//table/tbody/tr"));
         int i = 2;
