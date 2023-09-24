@@ -2,9 +2,13 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -16,14 +20,14 @@ public class ContactHelper extends HelperBase {
     }
 
     public void fillContactForm(ContactData contactData, boolean creation) {
-      type(By.name("firstname"),contactData.firstname());
-      type(By.name("middlename"),contactData.middlename());
-      type(By.name("lastname"),contactData.lastname());
-      type(By.name("nickname"),contactData.nickname());
-      type(By.name("title"),contactData.title());
-      type(By.name("company"),contactData.company());
-      type(By.name("address"),contactData.address());
-      type(By.name("mobile"),contactData.mobile());
+      type(By.name("firstname"),contactData.getFirstname());
+      type(By.name("middlename"),contactData.getMiddlename());
+      type(By.name("lastname"),contactData.getLastname());
+      type(By.name("nickname"),contactData.getNickname());
+      type(By.name("title"),contactData.getTitle());
+      type(By.name("company"),contactData.getCompany());
+      type(By.name("address"),contactData.getAddress());
+      type(By.name("mobile"),contactData.getMobile());
 
       if (creation)
         {
@@ -40,9 +44,11 @@ public class ContactHelper extends HelperBase {
       click(By.linkText("add new"));
     }
 
-    public void selectContact() {
+    public void selectContact(int id) {
         //click(By.id("3"));
-        click(By.xpath("//img[@alt='Edit']"));
+        //table[@id='maintable']/tbody/tr[15]/td[8]/a/img
+        //click(By.xpath("//img[@alt='Edit']"));
+        click(By.xpath("//table[@id='maintable']/tbody/tr[" +  String.valueOf(id) + "]/td[8]/a/img"));
     }
 
     public void deleteContact() {
@@ -62,4 +68,19 @@ public class ContactHelper extends HelperBase {
     public boolean isThereAContact() {
         return isElementPresent(By.xpath("//img[@alt='Edit']"));
     };
+
+    public List<ContactData> getContactList() {
+        List<ContactData> contacts = new ArrayList<ContactData>();
+        List<WebElement> elements = wd.findElements(By.xpath("//table/tbody/tr"));
+        int i = 2;
+        for (WebElement element : elements.subList(1, elements.size())) {
+            int id = Integer.parseInt(element.findElement(By.xpath("//tr[" + String.valueOf(i) + "]/td[1]/input")).getAttribute("value"));
+            String lastName = element.findElement(By.xpath("//tr[" + String.valueOf(i) + "]/td[2]")).getText();
+            String firstName = element.findElement(By.xpath("//tr[" + String.valueOf(i) + "]/td[3]")).getText();
+            ContactData contact = new ContactData(id, firstName, null, lastName, null, null, null, null, null);
+            contacts.add(contact);
+            i++;
+        }
+        return contacts;
+    }
 }
