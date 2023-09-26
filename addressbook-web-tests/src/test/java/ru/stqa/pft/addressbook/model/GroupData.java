@@ -26,7 +26,7 @@ public class GroupData {
         return header;
     }
 
-    public GroupData withId(int max) {
+    public GroupData withId(int id) {
 
         this.id = id;
         return this;
