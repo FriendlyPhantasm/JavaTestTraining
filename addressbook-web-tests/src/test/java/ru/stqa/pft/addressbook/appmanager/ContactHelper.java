@@ -44,8 +44,9 @@ public class ContactHelper extends HelperBase {
       click(By.linkText("add new"));
     }
 
-    public void selectContact(int id) {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[" +  String.valueOf(id) + "]/td[8]/a/img"));
+    public void selectContact(int index) {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[" +  String.valueOf(index) + "]/td[8]/a/img"));
+        //click((By.tagName("input")).toString(index));
     }
 
     public void deleteContact() {
