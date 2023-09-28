@@ -11,8 +11,72 @@ public class ContactData {
     private String title;
     private String company;
     private String address;
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
+    private String allPhones;
 
-    private String mobile;
+    private String allAddresses;
+
+    private String mail;
+    private String mail2;
+    private String mail3;
+
+    private String allMails;
+
+    public String getMail3() {
+        return mail3;
+    }
+
+    public ContactData withMail3(String mail3) {
+        this.mail3 = mail3;
+        return this;
+    }
+
+    public String getMail2() {
+        return mail2;
+    }
+
+    public ContactData withMail2(String mail2) {
+        this.mail2 = mail2;
+        return this;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public ContactData withMail(String mail) {
+        this.mail = mail;
+        return this;
+    }
+
+    public String getAllMails() {
+        return allMails;
+    }
+
+    public ContactData withAllMails(String allMails) {
+        this.allMails = allMails;
+        return this;
+    }
+
+    public String getAllAddresses() {
+        return allAddresses;
+    }
+
+    public ContactData withAllAddresses(String allAddresses) {
+        this.allAddresses = allAddresses;
+        return this;
+    }
+
+    public String getAllPhones() {
+        return allPhones;
+    }
+
+    public  ContactData withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
+        return this;
+    }
 
     public int getContactId() {
         return id;
@@ -59,8 +123,18 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withMobile(String mobile) {
-        this.mobile = mobile;
+    public ContactData withHomePhone(String mobile) {
+        this.homePhone = mobile;
+        return this;
+    }
+
+    public ContactData withWorkPhone(String mobile) {
+        this.workPhone = mobile;
+        return this;
+    }
+
+    public ContactData withMobilePhone(String mobile) {
+        this.mobilePhone = mobile;
         return this;
     }
 
@@ -92,8 +166,16 @@ public class ContactData {
         return address;
     }
 
-    public String getMobile() {
-        return mobile;
+    public String getHomePhone() {
+        return homePhone;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public String getWorkPhone() {
+        return workPhone;
     }
 
     public void setId(int max) {
@@ -111,7 +193,15 @@ public class ContactData {
                 ", title='" + title + '\'' +
                 ", company='" + company + '\'' +
                 ", address='" + address + '\'' +
-                ", mobile='" + mobile + '\'' +
+                ", homePhone='" + homePhone + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", workPhone='" + workPhone + '\'' +
+                ", allPhones='" + allPhones + '\'' +
+                ", allAddresses='" + allAddresses + '\'' +
+                ", mail='" + mail + '\'' +
+                ", mail2='" + mail2 + '\'' +
+                ", mail3='" + mail3 + '\'' +
+                ", allMails='" + allMails + '\'' +
                 '}';
     }
 
