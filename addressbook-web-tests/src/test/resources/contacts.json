@@ -1,0 +1,20 @@
+[
+  {
+    "firstname": "Oleg 0",
+    "lastname": "Tarasov 0",
+    "mobilePhone": "+797777777770",
+    "mail": "0@mail.com"
+  },
+  {
+    "firstname": "Oleg 1",
+    "lastname": "Tarasov 1",
+    "mobilePhone": "+797777777771",
+    "mail": "1@mail.com"
+  },
+  {
+    "firstname": "Oleg 2",
+    "lastname": "Tarasov 2",
+    "mobilePhone": "+797777777772",
+    "mail": "2@mail.com"
+  }
+]
